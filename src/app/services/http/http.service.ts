@@ -34,6 +34,7 @@ export class HttpService {
 
   secureGet(url:string, token:any){
     let headers =this.setHeaders(token);
+    // console.log(headers);
     return this.http.get(environment.baseUrl + url, {headers});
   }
 
@@ -41,9 +42,9 @@ export class HttpService {
     return this.http.post(environment.baseUrl + url, data);
   }
 
-  securePost(url:string, token:any){
+  securePost(url:string, token:any, data?:any){
     let headers =this.setHeaders(token);
-    let data='';
+    // console.log("before",headers, "after");
     return this.http.post(environment.baseUrl + url, data , {headers} );
   }
 

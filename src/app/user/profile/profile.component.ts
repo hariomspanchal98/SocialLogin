@@ -43,13 +43,14 @@ export class ProfileComponent implements OnInit {
     // localStorage.clear();
     this.authService.signOut().then(
       fulfilled=>{
-        console.log('Fulfilled');
+        // console.log('Fulfilled');
       },
       rejected=>{
-        console.log('Rejected');
+        // console.log('Rejected');
       },
     ).catch(
-      (err)=>console.log('Error')
+      (err)=>
+      console.log('Error')
     ).finally(()=>
       {
         localStorage.clear();

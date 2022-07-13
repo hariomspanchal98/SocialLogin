@@ -98,12 +98,12 @@ export class LoginComponent implements OnInit {
 
   login(){
     // console.log(this.myForm.value)
-    console.log(this.recaptcha);
+    // console.log(this.recaptcha);
     this.myForm.patchValue({
       captcha : this.recaptcha,
     });
-    console.log(this.myForm.value);
-    this.service.post('auth/login?captcha=true', this.myForm.value).subscribe({
+    // console.log(this.myForm.value);
+    this.service.post('auth/login', this.myForm.value).subscribe({
       next: (data:any)=>{
       // console.log(data);
       // localStorage.setItem('profileData', JSON.stringify(data));
@@ -143,37 +143,45 @@ export class LoginComponent implements OnInit {
     //   this.loggedIn = (user != null);
     //   console.log(user.idToken);
 
+    // console.log("dfuhsdufhjuihuih -",this.recaptcha);
+    // console.log('you are in google login');
 
-    this.service.post('auth/login/google?captcha=false', { "token": this.user.idToken }).subscribe(
+    this.service.post('auth/login/google', { "token": this.user.idToken, "captcha":this.recaptcha }).subscribe(
       (data:any)=>{
       // console.log(data);
       // localStorage.setItem('profileData', JSON.stringify(data));
       localStorage.setItem('token',data.token);
       // console.log('LogIn dkjsfhsiudghfo');
       this.router.navigateByUrl('/user/profile');
+      this.executeImportantAction();
       },
       (error:any)=>
       {
         // console.log('Erroytyhfd', error);
         this.errorMsg= error.message;
         this.errorStatus=error.code;
+        this.executeImportantAction();
       }
     )
   };
   logf(){
-    this.service.post('auth/login/facebook?captcha=false', { "token": this.user.authToken }).subscribe(
+    // console.log("dfuhsdufhjuihuih -",this.recaptcha);
+    // console.log('you are in facebook login');
+    this.service.post('auth/login/facebook', { "token": this.user.authToken, "captcha":this.recaptcha }).subscribe(
       (data:any)=>{
       // console.log(data.token);
       // localStorage.setItem('profileData', JSON.stringify(data));
       localStorage.setItem('token',data.token);
       // console.log('LogIn dkjsfhsiudghfo');
       this.router.navigateByUrl('/user/profile');
+      this.executeImportantAction();
       },
       (error:any)=>
       {
         // console.log('Erroytyhfd', error);
         this.errorMsg= error.error.message;
         this.errorStatus=error.error.code;
+        this.executeImportantAction();
       }
     )
   }
@@ -181,10 +189,11 @@ export class LoginComponent implements OnInit {
 
   public executeImportantAction(): void {
     this.recaptchaV3Service.execute('importantAction')
-      .subscribe((token) =>{
-        this.recaptcha=token,
-        console.log(this.recaptcha)
-  });
+      .subscribe((token) =>
+        {this.recaptcha=token
+        // console.log(this.recaptcha)
+        }
+        );
       // console.log(this.recaptcha);
   }
 }

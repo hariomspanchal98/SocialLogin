@@ -69,7 +69,7 @@ import { JwPaginationModule } from 'jw-angular-pagination';
         }
       } as SocialAuthServiceConfig,
     },
-    { provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LeHBK0bAAAAAOQVTvBOWhfb08cQfUpFoSE3FsmP" }
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LevmbQZAAAAAMSCjcpJmuCr4eIgmjxEI7bvbmRI" }
 ],
   bootstrap: [AppComponent ]
 })

@@ -19,8 +19,8 @@
     <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
       {{errorMsg}}
     </div>
-    
-    <button (click)="executeImportantAction()">ReCaptcha</button>
+
+    <!-- <button (click)="executeImportantAction()">ReCaptcha</button> -->
     <br>
 
     <button type="button" class="btn green" [disabled]="myForm.invalid" (click)="submit()">Submit</button>

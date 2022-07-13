@@ -36,8 +36,11 @@ export class RegisterComponent implements OnInit {
       company:new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required]),
       password:new FormControl('',[Validators.required]),
-      captcha: new FormControl('', [Validators.required]),
+      captcha: new FormControl(''),
     })
+
+
+
   }
 
   get name(){
@@ -65,21 +68,34 @@ export class RegisterComponent implements OnInit {
 
   submit(){
     // console.log(this.myForm.value)
+    this.myForm.patchValue({
+      captcha : this.recaptcha,
+    });
 
+    // console.log('recaptcha in submit....',this.recaptcha);
 
-
-    console.log(this.myForm.value);
+    // console.log(this.myForm.value);
 
     this.service.post('auth/register',this.myForm.value).subscribe({
       next:(data:any)=>{
       // console.log(data.token);
       this.tokenId=data.token;
-      // console.log(this.tokenId);
-      this.service.securePost('auth/send-verification-email',this.tokenId).subscribe(
-        ()=>{
-          // console.log('email req sent')
-        }
-      );
+      // console.log(' print zala',this.tokenId, 'register madhe ');
+      this.executeImportantAction();
+      setTimeout(() => {
+        this.service.securePost('auth/send-verification-email',this.tokenId, { "captcha" : this.recaptcha } ).subscribe(
+          ()=>{
+            console.log('email req sent')
+          },
+          (error:any)=>{
+            // console.log('Error in login is: ', error);
+            this.errorMsg = error.error.message;
+            this.executeImportantAction();
+            // this.registerForm.markAsPristine();
+          }
+        )
+      }, 2000);
+
       // this.verifyMail = 'Check your email for verification link';
       // this.router.navigate(['/login']);
       this.register=false;
@@ -92,18 +108,16 @@ export class RegisterComponent implements OnInit {
       // this.registerForm.markAsPristine();
     }
     })
-      // this.register=false;
-      // this.verify=true;
+      this.register=false;
+      this.verify=true;
   }
 
   public executeImportantAction(): void {
     this.recaptchaV3Service.execute('importantAction')
       .subscribe((token) => {
+        // console.log(token);
         this.recaptcha= token;
-        // console.log(this.recaptcha),
-        this.myForm.patchValue({
-          captcha : this.recaptcha,
-        });
+        // console.log(this.recaptcha)
       });
   }
   // submit(){
