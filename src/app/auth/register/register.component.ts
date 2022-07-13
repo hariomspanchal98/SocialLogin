@@ -100,7 +100,7 @@ export class RegisterComponent implements OnInit {
     this.recaptchaV3Service.execute('importantAction')
       .subscribe((token) => {
         this.recaptcha= token;
-        console.log(this.recaptcha),
+        // console.log(this.recaptcha),
         this.myForm.patchValue({
           captcha : this.recaptcha,
         });
