@@ -1,0 +1,12 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo left" [routerLink]="['/auth/login']">MyProfile</a>
+    <ul id="nav-mobile" class="right">
+
+      <li><a [routerLink]="['/users/create']">Create User</a></li>
+      <li><a [routerLink]="['/users/list']">All Users</a></li>
+      <li><a (click)="clear()">logOut</a></li>
+
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,43 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo left" [routerLink]="['/auth/login']">MyProfile</a>
+    <ul id="nav-mobile" class="right">
+
+      <li><a [routerLink]="['/users/create']">Create User</a></li>
+      <li><a [routerLink]="['/users/list']">All Users</a></li>
+      <li><a (click)="clear()">logOut</a></li>
+
+    </ul>
+  </div>
+</nav>
+<!-- <p>fgsd</p> -->
+<!-- <p>Registered at:- {{profileData.createdAt}}</p> -->
+
+<div class="parent">
+  <div class="child">
+    <table>
+
+      <tr>
+        <td>Name :</td>
+        <td>{{profileData?.name}}</td>
+      </tr>
+      <tr>
+        <td>Email :</td>
+        <td>{{profileData?.email}}</td>
+      </tr>
+      <tr>
+        <td>Role :</td>
+        <td>{{profileData?.role}}</td>
+      </tr>
+      <tr>
+        <td>Email Verification Status :</td>
+        <td style="color: green;" *ngIf="profileData?.isEmailVerified">Done</td>
+        <td style="color: red;" *ngIf="!profileData?.isEmailVerified">Pending</td>
+      </tr>
+      <tr>
+        <td>Company :</td>
+        <td>{{profileData?._org.name}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
