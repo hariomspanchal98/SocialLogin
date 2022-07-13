@@ -163,7 +163,7 @@ export class LoginComponent implements OnInit {
   logf(){
     this.service.post('auth/login/facebook?captcha=false', { "token": this.user.authToken }).subscribe(
       (data:any)=>{
-      console.log(data.token);
+      // console.log(data.token);
       // localStorage.setItem('profileData', JSON.stringify(data));
       localStorage.setItem('token',data.token);
       // console.log('LogIn dkjsfhsiudghfo');
