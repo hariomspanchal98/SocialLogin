@@ -19,18 +19,17 @@ justify-content: center;
 }
 .child {
 /* background-color: #FFFF00; */
-width: 320px;
+width: 325px;
 height: auto;
 border: solid 3px;
 padding: 20px;
 margin: 10px;
 border-radius: 20px;
-margin-top: 500px;
+margin-top: auto;
 }
 button
 {
   padding: auto;
-  margin: 10px;
-
-
+  margin: 5px;
 }
+
