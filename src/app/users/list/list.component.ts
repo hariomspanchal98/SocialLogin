@@ -27,16 +27,27 @@ export class ListComponent implements OnInit {
   tempToken:any;
   length;
   pageSize;
+  searchTerm = '';
+  term = '';
+  subusers;
 
   ngOnInit() {
     this.tempToken = (localStorage.getItem('token'));
     this.service.secureGet('users',this.tempToken).subscribe((data) => {
       // console.log(data);
       this.users = data;
+      // console.log(this.users.results);
+      this.subusers = this.users.results;
       // console.log(this.users?.results);
       this.length= this.users.totalResults;
       this.pageSize= this.users.limit;
     })
+  }
+
+  search(value: string): void {
+    this.users.results = this.subusers.filter((val) =>
+      val.name.toLowerCase().includes(value)
+    );
   }
 
   changeTable(e:PageEvent){
@@ -45,7 +56,10 @@ export class ListComponent implements OnInit {
     // console.log(environment.baseUrl+'users?page='+index+'&limit='+e.pageSize);
     this.service.secureGet('users?page='+index+'&limit='+e.pageSize,this.tempToken).subscribe((data) => {
       // console.log(data);
+      // console.log(data);
       this.users = data;
+      // console.log(this.users.results);
+      this.subusers = this.users.results;
       // console.log(this.users?.results);
       // this.length= this.users.totalResults;
       // this.pageSize= this.users.limit;
@@ -56,7 +70,8 @@ export class ListComponent implements OnInit {
     // console.log(url);
     this.service.del('users/'+ (url), this.tempToken).subscribe((data:any)=>{
       // console.log(data);
-      window.location.reload();
+
+      // window.location.reload();
     },
     (error)=>{
       console.log('Error in login is: ', error);

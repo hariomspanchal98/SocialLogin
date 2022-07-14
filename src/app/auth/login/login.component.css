@@ -44,7 +44,7 @@ img{
   display: flex;
   align-items: center;
 }
-a
+.all
 {
   cursor: pointer;
   display: block;
@@ -54,4 +54,7 @@ a
 }
 .reg{
 cursor: pointer;
+}
+asl-google-signin-button{
+  margin-left: 65px;
 }

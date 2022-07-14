@@ -9,14 +9,15 @@ import { UpdateComponent } from './update/update.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { SearchfilterPipe } from '../searchfilter.pipe';
 
 @NgModule({
   declarations: [
     ListComponent,
     DetailsComponent,
     UpdateComponent,
-    CreateComponent
+    CreateComponent,
+    SearchfilterPipe
   ],
   imports: [
     CommonModule,
@@ -25,7 +26,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FormsModule,
     ReactiveFormsModule,
     MatPaginatorModule
-
   ]
 })
 export class UsersModule { }

@@ -3,7 +3,10 @@
 <div style="
     width: 25%;
     display: flex;">
-  <input type="text" placeholder="Search Name">
+  <input type="text"
+        class="searchTerm"
+        placeholder="Search Name"
+        [(ngModel)]="searchTerm" (input)="search(searchTerm)">
   <i class="material-icons" style="cursor: pointer;">search</i>
 </div>
 
@@ -18,7 +21,7 @@
       </tr>
   </thead>
   <tbody>
-     <tr *ngFor="let user of users?.results" >
+     <tr *ngFor="let user of users?.results | searchFilter: searchTerm" >
       <td><a [routerLink]="['/users/details', user?._id]">{{user?.name}}</a></td>
       <td>{{user?.email}}</td>
       <td>{{user?.role}}</td>
@@ -33,7 +36,7 @@
 
 <mat-paginator [length]=length
               [pageSize]=pageSize
-              [pageSizeOptions]="[5, 10, 25, 100]"
+              [pageSizeOptions]="[5, 10, 25, 100, length]"
               aria-label="Select page"
               (page)="changeTable($event)">
 

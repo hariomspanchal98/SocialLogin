@@ -21,7 +21,6 @@ import {
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { SearchFilterPipe } from './search-filter.pipe';
     RegisterComponent,
     ProfileComponent,
     VerifyComponent,
-    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,

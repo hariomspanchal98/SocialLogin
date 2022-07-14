@@ -1,8 +1,8 @@
-import { SearchFilterPipe } from './search-filter.pipe';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 describe('SearchFilterPipe', () => {
   it('create an instance', () => {
-    const pipe = new SearchFilterPipe();
+    const pipe = new SearchfilterPipe();
     expect(pipe).toBeTruthy();
   });
 });
