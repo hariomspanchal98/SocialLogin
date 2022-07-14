@@ -42,6 +42,7 @@ img{
 }
 .social{
   display: flex;
+  align-items: center;
 }
 a
 {
@@ -53,5 +54,4 @@ a
 }
 .reg{
 cursor: pointer;
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 
@@ -17,15 +17,17 @@ export class UpdateComponent implements OnInit {
 
   error;
   errorMsg;
-  myForm:UntypedFormGroup;
+  myForm:FormGroup;
 
   ngOnInit(): void {
-    this.myForm = new UntypedFormGroup({
-      name: new UntypedFormControl(this.user.name,[Validators.required]),
-      email: new UntypedFormControl(this.user.email,[Validators.required]),
-      password:new UntypedFormControl('',[Validators.required]),
+    this.myForm = new FormGroup({
+      name: new FormControl(this.user?.name,[Validators.required]),
+      email: new FormControl(this.user?.email,[Validators.required]),
+      password:new FormControl('',[Validators.required]),
       // role:new FormControl(this.user.role,[Validators.required]),
     })
+
+
 
     this.tempToken = (localStorage.getItem('token'));
 
@@ -37,8 +39,9 @@ export class UpdateComponent implements OnInit {
       // console.log(data);
       this.user=data;
       console.log(this.user);
+      // console.log(this.user.name);
+      // console.log(this.user._id);
     })
-
   }
 
   get name(){
@@ -69,10 +72,11 @@ export class UpdateComponent implements OnInit {
       // console.log(this.tokenId);
       // this.verifyMail = 'Check your email for verification link';
       // this.router.navigate(['/login']);
+      this.router.navigateByUrl(`users/details/${this.user._id}`);
     },
     (error)=>{
       // console.log('Error in login is: ', error);
-      this.errorMsg = error.message;
+      this.errorMsg = error.error.message;
       // this.registerForm.markAsPristine();
     }
     )

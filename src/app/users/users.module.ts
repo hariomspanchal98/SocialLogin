@@ -8,7 +8,7 @@ import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator'
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({

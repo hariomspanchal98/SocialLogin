@@ -7,20 +7,20 @@
     <hr>
     <br>
     <label >Full name</label>
-    <input type="text" class="validate" placeholder="Enter full name" formControlName="name" >
+    <input type="text" class="validate" placeholder="Enter full name" formControlName="name" value={{this.user?.name}}>
 
     <label>Role</label>
-    <input type="text" placeholder="user" disabled >
+    <input type="text" placeholder="user" disabled value={{this.user?.role}}>
 
     <label>Email</label>
-    <input type="email" placeholder="Enter your Email" formControlName="email" >
+    <input type="email" placeholder="Enter your Email" formControlName="email" value={{this.user?.email}}>
 
     <label>Password</label>
     <input type="password" placeholder="Enter password here" formControlName="password">
 
-    <!-- <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
+    <div *ngIf="errorMsg" class="alert alert-danger" role="alert">
       {{errorMsg}}
-    </div> -->
+    </div>
 
     <button type="button" class="btn green" (click)="submit()">Submit</button>
     <button class="btn red" (click)="reset()">Reset</button>
