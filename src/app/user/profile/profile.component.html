@@ -27,11 +27,15 @@
         <td>{{profileData?.email}}</td>
       </tr>
       <tr>
+        <td>ID :</td>
+        <td>{{profileData?._id}}</td>
+      </tr>
+      <tr>
         <td>Role :</td>
         <td>{{profileData?.role}}</td>
       </tr>
       <tr>
-        <td>Email Verification Status :</td>
+        <td>Email Verification:</td>
         <td style="color: green;" *ngIf="profileData?.isEmailVerified">Done</td>
         <td style="color: red;" *ngIf="!profileData?.isEmailVerified">Pending</td>
       </tr>

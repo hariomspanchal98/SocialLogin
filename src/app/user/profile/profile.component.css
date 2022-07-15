@@ -20,7 +20,7 @@ margin-top: 100px;
 }
 .child {
 /* background-color: #FFFF00; */
-width: 300px;
+width: auto;
 height: auto;
 border: solid 3px;
 border-radius: 20px;

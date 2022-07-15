@@ -71,7 +71,7 @@ export class ListComponent implements OnInit {
     this.service.del('users/'+ (url), this.tempToken).subscribe((data:any)=>{
       // console.log(data);
 
-      // window.location.reload();
+      window.location.reload();
     },
     (error)=>{
       console.log('Error in login is: ', error);
