@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { observable, throwError } from 'rxjs';
 import { HttpService } from 'src/app/services/http/http.service';
-// import { HttpService } from '../../http.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 

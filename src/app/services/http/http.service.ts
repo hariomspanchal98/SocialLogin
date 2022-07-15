@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { ThisReceiver, Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

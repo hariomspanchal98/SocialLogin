@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
-import { UpdateComponent } from '../update/update.component';
 
 @Component({
   selector: 'app-details',

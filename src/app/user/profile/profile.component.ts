@@ -1,11 +1,7 @@
-import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NavbarComponent } from 'src/app/navbar/navbar/navbar.component';
 import { HttpService } from 'src/app/services/http/http.service';
 import { SocialAuthService } from "@abacritt/angularx-social-login";
-import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
 
 @Component({
   selector: 'app-profile',

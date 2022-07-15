@@ -1,13 +1,10 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http/http.service';
 import { SocialAuthService } from "@abacritt/angularx-social-login";
 import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
-import { GoogleLoginProvider } from "@abacritt/angularx-social-login";
 import { SocialUser } from "@abacritt/angularx-social-login";
-import { identifierName } from '@angular/compiler';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 
 @Component({

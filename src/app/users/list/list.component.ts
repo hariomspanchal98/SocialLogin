@@ -2,10 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-// import { NavbarComponent } from 'src/app/navbar/navbar/navbar.component';
 import { HttpService } from 'src/app/services/http/http.service';
-// import { InterceptorService } from 'src/app/services/interceptor/interceptor.service';
-// import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-list',

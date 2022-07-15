@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { SocialAuthService } from "@abacritt/angularx-social-login";
-import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
 import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
