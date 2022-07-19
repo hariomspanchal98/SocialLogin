@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
 
     console.log('recaptcha in submit....',this.recaptcha);
 
-    // console.log(this.myForm.value);
+    console.log(this.myForm.value);
 
     this.service.post('auth/register',this.myForm.value).subscribe({
       next:(data:any)=>{
