@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
       // console.log(res);
       // let output = JSON.parse(res)
       this.profileData = res;
-      console.log(this.profileData.role);
+      // console.log(this.profileData.role);
       // console.log('profile data from service:- ',this.profileData);
     })
 
