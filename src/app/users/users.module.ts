@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
@@ -10,6 +10,7 @@ import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SearchfilterPipe } from '../searchfilter.pipe';
+import { AvatarComponent } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SearchfilterPipe } from '../searchfilter.pipe';
     NavbarModule,
     FormsModule,
     ReactiveFormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ]
 })
 export class UsersModule { }

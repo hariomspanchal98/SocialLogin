@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,8 @@ import {
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AvatarModule } from 'ngx-avatar';
+CUSTOM_ELEMENTS_SCHEMA
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SocialLoginModule,
     RecaptchaV3Module,
     JwPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    AvatarModule
   ],
   providers: [AuthGuard,
   {

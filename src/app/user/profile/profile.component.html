@@ -1,6 +1,7 @@
 <nav>
   <div class="nav-wrapper black">
-    <img src="https://emoji.slack-edge.com/T0B4MLUM9/am-icon/08c37469129f7584.png" alt="AngularMinds" style="height: 70%; margin-left: 20px;">
+    <img src="https://emoji.slack-edge.com/T0B4MLUM9/am-icon/08c37469129f7584.png" alt="AngularMinds"
+      style="height: 70%; margin-left: 20px;">
     <a class="brand-logo center">MyProfile</a>
 
     <ul id="nav-mobile" class="right">
@@ -16,6 +17,9 @@
 
 <div class="parent">
   <div class="child">
+    <div style="display: contents;">
+      <ngx-avatar class="my-avatar" size="76" name={{profileData?.name}}></ngx-avatar>
+    </div>
     <table>
 
       <tr>
