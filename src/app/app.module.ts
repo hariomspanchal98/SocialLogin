@@ -22,7 +22,6 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AvatarModule } from 'ngx-avatar';
-CUSTOM_ELEMENTS_SCHEMA
 
 @NgModule({
   declarations: [

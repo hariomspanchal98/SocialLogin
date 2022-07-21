@@ -10,7 +10,7 @@ import { CreateComponent } from './create/create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SearchfilterPipe } from '../searchfilter.pipe';
-import { AvatarComponent } from 'ngx-avatar';
+import { AvatarModule } from 'ngx-avatar';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { AvatarComponent } from 'ngx-avatar';
     FormsModule,
     ReactiveFormsModule,
     MatPaginatorModule,
+    AvatarModule
   ]
 })
 export class UsersModule { }
