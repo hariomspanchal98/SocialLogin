@@ -11,6 +11,7 @@ export class CreateproductComponent implements OnInit {
 
   myForm:any;
   tempToken;
+  selectedFile;
 
   constructor(private service:HttpService) { }
 
@@ -40,17 +41,25 @@ export class CreateproductComponent implements OnInit {
     return this.myForm.get('description');
   }
 
+  onFileSelected(event){
+this.selectedFile = <File>event.target.files[0]
+  }
+
   submit(){
+    const fd = new FormData();
+    fd.append('images',this.selectedFile, this.selectedFile.name),
+
+
     console.log(this.myForm.value);
-    // this.service.securePost('products',this.tempToken,this.myForm.value).subscribe(
-    //   ()=>{
-    //     console.log('added')
-    //   },
-    //   (error:any)=>{
-    //     // console.log('Error in login is: ', error);
-    //     console.log(error);
-    //     // this.registerForm.markAsPristine();
-    //   }
-    // )
+    this.service.securePost('products',this.tempToken,this.myForm.value).subscribe(
+      ()=>{
+        console.log('added')
+      },
+      (error:any)=>{
+        // console.log('Error in login is: ', error);
+        console.log(error);
+        // this.registerForm.markAsPristine();
+      }
+    )
   }
 }

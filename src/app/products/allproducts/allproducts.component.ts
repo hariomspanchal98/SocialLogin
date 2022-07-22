@@ -10,6 +10,7 @@ export class AllproductsComponent implements OnInit {
 
   tempToken;
   products;
+  i=0;
 
   constructor(private service:HttpService) { }
 

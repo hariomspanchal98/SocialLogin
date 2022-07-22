@@ -6,6 +6,8 @@ import { AllproductsComponent } from './allproducts/allproducts.component';
 import { NavbarModule } from '../navbar/navbar.module';
 import { CreateproductComponent } from './createproduct/createproduct.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ProductsRoutingModule,
     NavbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IvyCarouselModule,
+    MdbCarouselModule
   ]
 })
 export class ProductsModule { }

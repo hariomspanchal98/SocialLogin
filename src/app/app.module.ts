@@ -22,6 +22,7 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AvatarModule } from 'ngx-avatar';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AvatarModule } from 'ngx-avatar';
     RecaptchaV3Module,
     JwPaginationModule,
     Ng2SearchPipeModule,
-    AvatarModule
+    AvatarModule,
+    IvyCarouselModule
   ],
   providers: [AuthGuard,
   {

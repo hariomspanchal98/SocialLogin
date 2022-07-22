@@ -4,7 +4,7 @@
   <input type="text" formControlName="name">
 
   <label>Images</label>
-  <input type="file" formControlName="images">
+  <input type="file" (change)="onFileSelected($event)">
 
   <label>Description</label>
   <input type="text" formControlName="description">
